@@ -1,12 +1,7 @@
-export  default function checkHealth(obj) {
-  let result = '';
-  if(obj.health > 51) {
-    result = 'healthy';
-  } else if(obj.health < 50 && obj.health > 16){
-    result = 'wounded';
-  } else {
+export default function checkHealth(obj) {
+  let result = obj.health >= 50 ? 'healthy' : 'wounded';
+  if (obj.health < 15) {
     result = 'critical';
   }
-
   return result;
 }
